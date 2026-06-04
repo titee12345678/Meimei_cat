@@ -319,42 +319,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // ============================================
-  // CUSTOM CURSOR TRAIL
-  // ============================================
-  const customCursor = document.getElementById('customCursor');
-  let cursorX = -100;
-  let cursorY = -100;
-  let targetX = -100;
-  let targetY = -100;
-  const inertia = 0.15;
 
-  if (customCursor) {
-    document.addEventListener('mousemove', (e) => {
-      targetX = e.clientX;
-      targetY = e.clientY;
-    });
-
-    function updateCursorPosition() {
-      cursorX += (targetX - cursorX) * inertia;
-      cursorY += (targetY - cursorY) * inertia;
-      customCursor.style.left = `${cursorX}px`;
-      customCursor.style.top = `${cursorY}px`;
-      requestAnimationFrame(updateCursorPosition);
-    }
-    requestAnimationFrame(updateCursorPosition);
-
-    // Hover effect on links and buttons
-    const hoverElements = document.querySelectorAll('a, button, .mini-cat, .gallery-item, .service-card, .why-card');
-    hoverElements.forEach(el => {
-      el.addEventListener('mouseenter', () => {
-        customCursor.classList.add('custom-cursor-hover');
-      });
-      el.addEventListener('mouseleave', () => {
-        customCursor.classList.remove('custom-cursor-hover');
-      });
-    });
-  }
 
   // ============================================
   // SCROLL PROGRESS BAR & WALKING CAT
@@ -441,30 +406,7 @@ document.addEventListener('DOMContentLoaded', () => {
     meowBtn.addEventListener('click', playSynthesizedMeow);
   }
 
-  // ============================================
-  // CLICK PAW PRINT PARTICLES
-  // ============================================
-  document.addEventListener('click', (e) => {
-    if (e.target.closest('#lightbox') || e.target.closest('.nav-links') || e.target.closest('#videoWrapper')) {
-      return;
-    }
 
-    const paw = document.createElement('div');
-    paw.className = 'paw-particle';
-    paw.textContent = '🐾';
-    paw.style.left = `${e.clientX}px`;
-    paw.style.top = `${e.clientY}px`;
-    
-    const colors = ['#FF6FA5', '#48CAED', '#FFB6C1', '#87CEFA'];
-    const randomColor = colors[Math.floor(Math.random() * colors.length)];
-    paw.style.color = randomColor;
-
-    document.body.appendChild(paw);
-
-    setTimeout(() => {
-      paw.remove();
-    }, 800);
-  });
 
   // ============================================
   // 3D CARD PARALLAX TILT

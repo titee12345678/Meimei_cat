@@ -514,8 +514,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @keyframes catFloat {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-15px); }
+  0%, 100% { transform: translateY(0) rotate(0deg) scale(1); }
+  50% { transform: translateY(-16px) rotate(-1.5deg) scale(1.015); }
 }
 
 /* Floating paw around hero */
@@ -626,15 +626,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .service-card {
-  background: var(--cream-white);
+  background: var(--glass-white);
   border-radius: var(--border-radius);
   padding: 40px 28px;
   text-align: center;
   transition: all var(--transition-medium);
-  border: 1px solid rgba(255, 225, 236, 0.3);
+  border: 1px solid var(--glass-border);
   position: relative;
   overflow: hidden;
   cursor: pointer;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
 }
 
 .service-card::before {
@@ -653,9 +655,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .service-card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-8px) scale(1.02);
   box-shadow: var(--shadow-card-hover);
-  background: var(--white);
+  border-color: var(--accent-pink);
+  background: rgba(255, 255, 255, 0.85);
 }
 
 .service-icon {
@@ -1033,14 +1036,16 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .why-card {
-  background: var(--white);
+  background: var(--glass-white);
   border-radius: var(--border-radius);
   padding: 44px 32px;
   text-align: center;
   transition: all var(--transition-medium);
-  border: 1px solid rgba(221, 244, 255, 0.5);
+  border: 1px solid var(--glass-border);
   position: relative;
   overflow: hidden;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
 }
 
 .why-card::after {
@@ -1058,8 +1063,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .why-card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-8px) scale(1.02);
   box-shadow: var(--shadow-card-hover);
+  border-color: var(--accent-blue);
+  background: rgba(255, 255, 255, 0.85);
 }
 
 .why-icon {
@@ -1681,6 +1688,15 @@ h1, h2, h3, h4, h5, h6 {
   animation: floatGlow2 30s ease-in-out infinite;
 }
 
+.bg-glow-3 {
+  position: absolute;
+  top: 40%; left: 30%;
+  width: 50vw; height: 50vw;
+  background: radial-gradient(circle, rgba(72, 202, 237, 0.12) 0%, rgba(255, 255, 255, 0) 70%);
+  filter: blur(100px);
+  animation: floatGlow3 20s ease-in-out infinite;
+}
+
 @keyframes floatGlow1 {
   0%, 100% { transform: translate(0, 0) scale(1); }
   50% { transform: translate(15vw, 10vh) scale(1.1); }
@@ -1691,35 +1707,9 @@ h1, h2, h3, h4, h5, h6 {
   50% { transform: translate(-10vw, -15vh) scale(1.15); }
 }
 
-/* ---------- Custom Cursor ---------- */
-.custom-cursor {
-  width: 20px;
-  height: 20px;
-  border: 2px solid var(--accent-pink);
-  border-radius: 50%;
-  position: fixed;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  z-index: 9999;
-  transition: width 0.3s, height 0.3s, background-color 0.3s, border-color 0.3s;
-  mix-blend-mode: difference;
-}
-
-.custom-cursor-hover {
-  width: 45px;
-  height: 45px;
-  background-color: rgba(255, 111, 165, 0.3);
-  border-color: var(--accent-blue);
-}
-
-/* Hide default cursor on desktop */
-@media (min-width: 1025px) {
-  body {
-    cursor: none;
-  }
-  a, button, .mini-cat, .gallery-item, .service-card, .why-card, .btn {
-    cursor: none;
-  }
+@keyframes floatGlow3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-5vw, 8vh) scale(0.95); }
 }
 
 /* ---------- Scroll Progress Bar with Walking Cat ---------- */
@@ -1779,7 +1769,7 @@ h1, h2, h3, h4, h5, h6 {
   transition: all var(--transition-fast);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  cursor: none;
+  cursor: pointer;
 }
 
 .floating-meow-btn:hover {
@@ -1791,27 +1781,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .floating-meow-btn:active {
   transform: scale(0.96) translateY(0);
-}
-
-/* ---------- Click Paw Particle ---------- */
-.paw-particle {
-  position: fixed;
-  font-size: 1.5rem;
-  pointer-events: none;
-  z-index: 9998;
-  user-select: none;
-  animation: particleFloatFade 0.8s var(--ease-smooth) forwards;
-}
-
-@keyframes particleFloatFade {
-  0% {
-    transform: translate(-50%, -50%) translateY(0) scale(0.5) rotate(0deg);
-    opacity: 1;
-  }
-  100% {
-    transform: translate(-50%, -50%) translateY(-60px) scale(1.2) rotate(30deg);
-    opacity: 0;
-  }
 }
 
 /* ---------- 3D Card Parallax Tilt ---------- */
