@@ -1346,10 +1346,11 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .hero-mini-cats {
-    right: 50%;
+    left: 50%;
+    right: auto;
     top: auto;
     bottom: -125px;
-    transform: translateX(50%);
+    transform: translateX(-50%);
     flex-direction: row;
     gap: 16px;
   }
