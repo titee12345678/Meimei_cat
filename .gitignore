@@ -1,0 +1,11 @@
+# Ignore raw assets in the root folder
+/*.JPG
+/*.jpg
+/*.MOV
+/*.mov
+/*.png
+/*.PNG
+
+# Ignore system files
+.DS_Store
+Thumbs.db

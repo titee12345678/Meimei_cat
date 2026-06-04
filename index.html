@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MeiMei — A Very Cute Cat</title>
+  <meta name="description" content="Meet MeiMei, a cute cat who sleeps all day and judges you from the window.">
+
+  <link rel="preload" href="images/cat-main.jpg" as="image" fetchpriority="high">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐱</text></svg>">
+</head>
+<body>
+
+  <!-- Floating Paw Prints -->
+  <div class="paw-container" aria-hidden="true">
+    <span class="paw">🐾</span>
+    <span class="paw">🐾</span>
+    <span class="paw">🐾</span>
+    <span class="paw">🐾</span>
+    <span class="paw">🐾</span>
+    <span class="paw">🐾</span>
+    <span class="paw">🐾</span>
+    <span class="paw">🐾</span>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="#" class="logo" id="logo">
+        <span class="logo-icon">🐱</span>
+        <span>MeiMei</span>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="#home" class="active">Home</a>
+        <a href="#daily">Daily Life</a>
+        <a href="#about">About</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact" class="btn btn-primary btn-nav">Follow 💕</a>
+      </div>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          Currently napping
+        </div>
+
+        <h1>
+          Hi, I'm<br>
+          <span class="highlight">MeiMei</span> 🐾
+        </h1>
+
+        <p class="hero-subtitle">
+          A cute cat who naps professionally, stares out windows dramatically, and runs into walls occasionally.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#gallery" class="btn btn-primary">See Photos 📸</a>
+          <a href="#video" class="btn btn-secondary">Watch Me Play ▶️</a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat-item">
+            <div class="stat-number">18 hrs</div>
+            <div class="stat-label">Sleep per day</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">3 am</div>
+            <div class="stat-label">Peak zoomies</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">∞</div>
+            <div class="stat-label">Treats wanted</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-image-wrapper">
+        <div class="hero-blob" aria-hidden="true"></div>
+        <img src="images/cat-main.jpg" alt="MeiMei the cute cat" class="hero-cat-img" width="420" height="500" fetchpriority="high">
+
+        <span class="hero-paw" aria-hidden="true">🐾</span>
+        <span class="hero-paw" aria-hidden="true">🐾</span>
+        <span class="hero-paw" aria-hidden="true">🐾</span>
+        <span class="hero-paw" aria-hidden="true">🐾</span>
+
+        <div class="hero-mini-cats">
+          <img src="images/cat-1.jpg" alt="MeiMei in the car" class="mini-cat" width="90" height="90" loading="lazy">
+          <img src="images/cat-2.jpg" alt="MeiMei sleeping" class="mini-cat" width="90" height="90" loading="lazy">
+          <img src="images/cat-3.jpg" alt="MeiMei portrait" class="mini-cat" width="90" height="90" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DAILY LIFE -->
+  <section class="section services" id="daily">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-badge">🐾 Daily Life</div>
+        <h2 class="section-title">A Day in MeiMei's Life</h2>
+        <p class="section-subtitle">
+          It's mostly sleeping. But sometimes there's drama.
+        </p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card reveal stagger-1" id="daily-sleep">
+          <div class="service-icon pink">😴</div>
+          <h3>Nap Time</h3>
+          <p>Professional sleeper. Can fall asleep anywhere, anytime, in the weirdest positions.</p>
+        </div>
+
+        <div class="service-card reveal stagger-2" id="daily-window">
+          <div class="service-icon blue">🪟</div>
+          <h3>Window Watching</h3>
+          <p>Staring at birds and cars for hours. Deep thoughts? Probably just vibes.</p>
+        </div>
+
+        <div class="service-card reveal stagger-3" id="daily-zoomies">
+          <div class="service-icon green">💨</div>
+          <h3>Zoomies</h3>
+          <p>3 AM energy bursts. Running, jumping, sliding across the floor. No explanation needed.</p>
+        </div>
+
+        <div class="service-card reveal stagger-4" id="daily-food">
+          <div class="service-icon purple">🐟</div>
+          <h3>Snack Time</h3>
+          <p>Eyes go big. Meows get loud. Will do anything for wet food and tuna.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section about" id="about">
+    <div class="container">
+      <div class="about-image-wrapper reveal-left">
+        <img src="images/cat-4.jpg" alt="MeiMei sleeping under a blanket" class="about-img" loading="lazy">
+        <div class="about-decoration pink-circle" aria-hidden="true"></div>
+        <div class="about-decoration blue-circle" aria-hidden="true"></div>
+      </div>
+
+      <div class="about-content reveal-right">
+        <div class="section-badge">💝 About</div>
+        <h2>
+          This is<br>
+          <span class="highlight">MeiMei</span>
+        </h2>
+        <p>
+          A tiny kitten who joined the family to spread joy.
+          Loves blankets, hates closed doors, and has perfected
+          the art of looking adorable to get whatever she wants.
+        </p>
+
+        <div class="about-badges">
+          <span class="about-badge-item cute">🐱 Smol</span>
+          <span class="about-badge-item friendly">💕 Clingy</span>
+          <span class="about-badge-item healthy">😴 Sleepy</span>
+        </div>
+
+        <a href="#gallery" class="btn btn-primary">More Photos 📸</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIDEO -->
+  <section class="section video-section" id="video">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-badge">🎬 Video</div>
+        <h2 class="section-title">MeiMei in Action</h2>
+        <p class="section-subtitle">Rare footage of not sleeping.</p>
+      </div>
+
+      <div class="video-wrapper reveal-scale" id="videoWrapper">
+        <video id="catVideo" preload="none" loop playsinline poster="images/cat-main.jpg">
+          <source src="images/cat-video.mp4" type="video/mp4">
+          Your browser does not support video.
+        </video>
+        <div class="video-overlay" id="videoOverlay">
+          <button class="play-btn" id="playBtn" aria-label="Play video">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+          </button>
+          <span class="video-label">Press play 🐾</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="section gallery" id="gallery">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-badge">📸 Gallery</div>
+        <h2 class="section-title">The MeiMei Collection</h2>
+        <p class="section-subtitle">Mostly sleeping. Sometimes posing.</p>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="gallery-item reveal stagger-1" data-img="images/cat-4.jpg">
+          <img src="images/cat-4.jpg" alt="MeiMei napping under blanket" loading="lazy" width="400" height="300">
+          <div class="gallery-item-overlay"><span>Blanket mode 😴</span></div>
+        </div>
+        <div class="gallery-item reveal stagger-2" data-img="images/cat-5.jpg">
+          <img src="images/cat-5.jpg" alt="MeiMei looking out car window" loading="lazy" width="400" height="300">
+          <div class="gallery-item-overlay"><span>Road trip 🌆</span></div>
+        </div>
+        <div class="gallery-item reveal stagger-3" data-img="images/cat-6.jpg">
+          <img src="images/cat-6.jpg" alt="MeiMei waving paw" loading="lazy" width="400" height="300">
+          <div class="gallery-item-overlay"><span>High five 🐾</span></div>
+        </div>
+        <div class="gallery-item reveal stagger-4" data-img="images/cat-8.jpg">
+          <img src="images/cat-8.jpg" alt="MeiMei playing" loading="lazy" width="400" height="300">
+          <div class="gallery-item-overlay"><span>Play time 🧸</span></div>
+        </div>
+        <div class="gallery-item reveal stagger-5" data-img="images/cat-9.jpg">
+          <img src="images/cat-9.jpg" alt="MeiMei by the curtain" loading="lazy" width="400" height="300">
+          <div class="gallery-item-overlay"><span>Curtain peek 👀</span></div>
+        </div>
+        <div class="gallery-item reveal stagger-6" data-img="images/cat-3.jpg">
+          <img src="images/cat-3.jpg" alt="MeiMei close up" loading="lazy" width="400" height="300">
+          <div class="gallery-item-overlay"><span>Portrait mode 🌸</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FUN FACTS -->
+  <section class="section why-us" id="facts">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-badge">⭐ Fun Facts</div>
+        <h2 class="section-title">Things About MeiMei</h2>
+        <p class="section-subtitle">Some important information.</p>
+      </div>
+
+      <div class="why-grid">
+        <div class="why-card reveal stagger-1" id="fact-sleep">
+          <div class="why-icon">🛌</div>
+          <h3>Sleep Champion</h3>
+          <p>Has never missed a nap. Not once. Can sleep through anything except the sound of a treat bag.</p>
+          <span class="why-badge">🏆 18 hrs / day</span>
+        </div>
+        <div class="why-card reveal stagger-2" id="fact-clingy">
+          <div class="why-icon">🫶</div>
+          <h3>Personal Space? No.</h3>
+          <p>Follows you everywhere. Sits on your laptop. Sleeps on your face. Boundaries don't exist.</p>
+          <span class="why-badge">💕 Zero concept of space</span>
+        </div>
+        <div class="why-card reveal stagger-3" id="fact-chaos">
+          <div class="why-icon">😹</div>
+          <h3>Controlled Chaos</h3>
+          <p>Knocks things off tables on purpose. Runs into walls. Acts like nothing happened.</p>
+          <span class="why-badge">🌀 No regrets</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT / FOLLOW -->
+  <section class="section contact" id="contact">
+    <div class="container">
+      <div class="contact-box reveal-scale">
+        <span class="contact-paw" aria-hidden="true">🐾</span>
+        <span class="contact-paw" aria-hidden="true">🐾</span>
+
+        <div class="section-badge">💌 Follow</div>
+        <h2>Want more MeiMei?</h2>
+        <p>New photos and clips posted regularly. Mostly sleeping content.</p>
+
+        <div class="contact-buttons">
+          <a href="#" class="btn btn-tiktok" id="btn-tiktok">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.02 1.59 4.22.95 1.18 2.27 2.01 3.73 2.37.01 1.34-.01 2.68-.01 4.02-.92-.09-1.84-.36-2.69-.76-.84-.39-1.61-.96-2.22-1.67-.02 2.51-.01 5.02-.02 7.53-.02 1.39-.41 2.76-1.12 3.94-.71 1.18-1.78 2.11-3.03 2.69-1.25.58-2.65.81-4.03.65s-2.69-.74-3.76-1.67C3.76 20.31 3 18.78 2.87 17.18c-.13-1.6.35-3.21 1.35-4.49.99-1.28 2.44-2.13 4.04-2.38 1.21-.19 2.45-.04 3.59.44v4.29c-.73-.41-1.57-.59-2.41-.51-.84.07-1.63.46-2.18 1.1-.55.64-.82 1.48-.75 2.32.07.84.48 1.6 1.13 2.12.65.52 1.49.75 2.33.64.84-.11 1.59-.57 2.07-1.27.38-.55.57-1.21.56-1.87.02-4.89.01-9.78.02-14.67z"/></svg>
+            TikTok
+          </a>
+          <a href="#" class="btn btn-facebook" id="btn-facebook">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            Facebook
+          </a>
+          <a href="#" class="btn btn-primary" id="btn-ig">📷 Instagram</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer-logo">
+        <span>🐱</span>
+        <span>MeiMei</span>
+      </div>
+      <p>Made with 💖 by MeiMei's human</p>
+      <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#daily">Daily Life</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Follow</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Enlarged photo">
+    <img src="" alt="" class="lightbox-img" id="lightboxImg">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close">✕</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
