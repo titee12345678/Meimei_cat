@@ -300,23 +300,32 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ============================================
-  // PARALLAX EFFECT — Hero section subtle depth
+  // PARALLAX EFFECT — Hero section & Background Glows
   // ============================================
   if (!prefersReducedMotion) {
     const heroBg = document.querySelector('.hero');
     const heroBlob = document.querySelector('.hero-blob');
+    const glow1 = document.querySelector('.bg-glow-1');
+    const glow2 = document.querySelector('.bg-glow-2');
+    const glow3 = document.querySelector('.bg-glow-3');
 
-    if (heroBg && heroBlob) {
-      window.addEventListener('scroll', () => {
-        const scrollY = window.scrollY;
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+
+      // Hero blob parallax
+      if (heroBg && heroBlob) {
         const maxScroll = heroBg.offsetHeight;
-
         if (scrollY < maxScroll) {
           const progress = scrollY / maxScroll;
-          heroBlob.style.transform = `translateY(${progress * 30}px) scale(${1 - progress * 0.1})`;
+          heroBlob.style.transform = `translateY(${progress * 40}px) scale(${1 - progress * 0.08})`;
         }
-      }, { passive: true });
-    }
+      }
+
+      // Background glows slow parallax movement
+      if (glow1) glow1.style.transform = `translateY(${scrollY * 0.12}px)`;
+      if (glow2) glow2.style.transform = `translateY(${-scrollY * 0.08}px)`;
+      if (glow3) glow3.style.transform = `translateY(${scrollY * 0.05}px)`;
+    }, { passive: true });
   }
 
 
