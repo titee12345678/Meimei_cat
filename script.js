@@ -347,66 +347,6 @@ document.addEventListener('DOMContentLoaded', () => {
     requestAnimationFrame(updateScrollProgress);
   }, { passive: true });
 
-  // ============================================
-  // WEB AUDIO "MEOW" SYNTHESIZER
-  // ============================================
-  const meowBtn = document.getElementById('meowBtn');
-
-  function playSynthesizedMeow() {
-    try {
-      const AudioContext = window.AudioContext || window.webkitAudioContext;
-      if (!AudioContext) return;
-      
-      const ctx = new AudioContext();
-      const now = ctx.currentTime;
-      
-      const osc1 = ctx.createOscillator();
-      osc1.type = 'sine';
-      
-      const osc2 = ctx.createOscillator();
-      osc2.type = 'triangle';
-      
-      const gainNode = ctx.createGain();
-      const filterNode = ctx.createBiquadFilter();
-      
-      // Pitch envelope: starting lower, bending high, and dropping slightly
-      osc1.frequency.setValueAtTime(450, now);
-      osc1.frequency.quadraticRampToValueAtTime(880, now + 0.15);
-      osc1.frequency.exponentialRampToValueAtTime(680, now + 0.6);
-      
-      osc2.frequency.setValueAtTime(900, now);
-      osc2.frequency.quadraticRampToValueAtTime(1760, now + 0.15);
-      osc2.frequency.exponentialRampToValueAtTime(1360, now + 0.6);
-      
-      // Volume envelope
-      gainNode.gain.setValueAtTime(0, now);
-      gainNode.gain.linearRampToValueAtTime(0.3, now + 0.08);
-      gainNode.gain.exponentialRampToValueAtTime(0.01, now + 0.6);
-      
-      // Keep it soft with lowpass filter
-      filterNode.type = 'lowpass';
-      filterNode.frequency.setValueAtTime(2000, now);
-      filterNode.frequency.exponentialRampToValueAtTime(800, now + 0.6);
-      
-      osc1.connect(gainNode);
-      osc2.connect(gainNode);
-      gainNode.connect(filterNode);
-      filterNode.connect(ctx.destination);
-      
-      osc1.start(now);
-      osc2.start(now);
-      osc1.stop(now + 0.6);
-      osc2.stop(now + 0.6);
-    } catch (e) {
-      console.warn('Web Audio meow synth failed', e);
-    }
-  }
-
-  if (meowBtn) {
-    meowBtn.addEventListener('click', playSynthesizedMeow);
-  }
-
-
 
   // ============================================
   // 3D CARD PARALLAX TILT
